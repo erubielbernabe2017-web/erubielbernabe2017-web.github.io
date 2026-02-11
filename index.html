@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía · Herramientas de Educación Digital</title>
+    <!-- Font Awesome 6 (iconos y logos simulados) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #f6f9fc 0%, #e9f1f8 100%);
+            font-family: 'Inter', 'Poppins', sans-serif;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .infografia {
+            max-width: 1280px;
+            width: 100%;
+            background: white;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 20px 40px -10px rgba(0,20,40,0.25);
+            padding: 40px 35px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        /* decoración colorida */
+        .infografia::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #ffd16655, #ff9e0055);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .infografia::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -30px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #06d6a055, #118ab255);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .contenido {
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #073b4c;
+            letter-spacing: -1px;
+            margin-bottom: 0.2em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+        h1 span {
+            background: #ffd166;
+            padding: 8px 18px;
+            border-radius: 60px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e3d42;
+        }
+        .subtitulo {
+            font-size: 1.3rem;
+            color: #2d6a7a;
+            margin-bottom: 45px;
+            font-weight: 500;
+            border-left: 12px solid #06d6a0;
+            padding-left: 25px;
+            background: #f0f9ff60;
+            border-radius: 0 20px 20px 0;
+            line-height: 1.6;
+        }
+        .categoria {
+            margin-top: 45px;
+        }
+        .categoria-titulo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 5px solid;
+        }
+        .grid-herramientas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+        }
+        .tarjeta {
+            background: white;
+            border-radius: 32px;
+            padding: 22px 20px;
+            box-shadow: 0 10px 18px rgba(0,30,50,0.06);
+            transition: 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ffffff80;
+            backdrop-filter: blur(2px);
+        }
+        .tarjeta:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 30px -8px rgba(0,120,200,0.2);
+            border-color: #b8e2f2;
+        }
+        .cabecera-herramienta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 14px;
+        }
+        .logo-simulado {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(145deg, #f0f3fa, #e6ecf5);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a535c;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+        }
+        .nombre-herramienta {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #0a3142;
+            line-height: 1.2;
+        }
+        .ejemplo {
+            background: #fafbfc;
+            padding: 12px 14px;
+            border-radius: 20px;
+            margin: 14px 0;
+            font-size: 0.95rem;
+            color: #2c4c5b;
+            border-left: 5px solid;
+            word-break: break-word;
+        }
+        .pros-contras {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        .pros {
+            background: #e1f7e7;
+            padding: 10px;
+            border-radius: 18px;
+            flex: 1;
+            color: #0f5c3f;
+            font-weight: 500;
+        }
+        .contras {
+            background: #ffe7e5;
+            padding: 10px;
+            border-radius: 18px;
+            flex: 1;
+            color: #a43a3a;
+            font-weight: 500;
+        }
+        .qr-simulado {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #edf2fb;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0b4f6c;
+            border: 1px dashed #3f8f9b;
+        }
+        .qr-icon {
+            background: black;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 16px;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+        i {
+            margin-right: 6px;
+            color: #2b7a78;
+        }
+        .footer {
+            margin-top: 60px;
+            background: #0b3b4b;
+            color: white;
+            padding: 32px 28px;
+            border-radius: 40px 40px 24px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .qr-aula {
+            background: white;
+            padding: 12px 18px;
+            border-radius: 30px;
+            color: #073b4c;
+            font-weight: 700;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        @media (max-width: 800px) {
+            h1 { font-size: 2.4rem; }
+            .grid-herramientas { grid-template-columns: 1fr; }
+        }
+        .badge {
+            background: #ffe45c;
+            border-radius: 50px;
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1e3d42;
+        }
+    </style>
+</head>
+<body>
+<div class="infografia">
+    <div class="contenido">
+        
+        <!-- TÍTULO PRINCIPAL -->
+        <h1>
+            <i class="fas fa-graduation-cap" style="color: #118ab2;"></i> AULA 4.0 
+            <span>herramientas que transforman</span>
+        </h1>
+        <div class="subtitulo">
+            <i class="fas fa-magic" style="color: #ef476f;"></i> Colaboración · IA · Gamificación · Creatividad — Infografía interactiva para docentes innovadores
+        </div>
+
+        <!-- SECCIÓN 1 · COLABORACIÓN VISUAL -->
+        <div class="categoria">
+            <div class="categoria-titulo" style="border-bottom-color: #06d6a0; color: #1b7a6b;">
+                <i class="fas fa-users" style="font-size: 2rem;"></i> Pizarras y murales colaborativos
+            </div>
+            <div class="grid-herramientas">
+                <!-- MURAL -->
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #f7e05e30; color: #c47c0e;">📌</div>
+                        <div class="nombre-herramienta">MURAL</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #f4c542;">
+                        <i class="fas fa-clipboard-check"></i> Acuerdos de convivencia · ABP<br>
+                        <small>🔗 app.mural.co/etrr7325</small>
+                    </div>
+                    <div class="pros-contras">
+                        <div class="pros">✅ intuitivo · gifs · embebible</div>
+                        <div class="contras">⚠️ cuenta oblig. · pocos murales</div>
+                    </div>
+                    <div class="qr-simulado">
+                        <span class="qr-icon"><i class="fas fa-qrcode"></i> QR·MURAL</span> 
+                        mural.co/edu-proyectos
+                        <i class="fas fa-copy" style="color: gray;"></i>
+                    </div>
+                </div>
+                <!-- MIRO -->
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #ffd98c; color: #994b1e;">🎯</div>
+                        <div class="nombre-herramienta">MIRO</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #e36414;">
+                        <i class="fas fa-brain"></i> Pizarra infinita · trabajo síncrono
+                    </div>
+                    <div class="pros-contras">
+                        <div class="pros">✅ colaboración remota</div>
+                        <div class="contras">⚠️ consigna clara · internet</div>
+                    </div>
+                    <div class="qr-simulado">
+                        <span class="qr-icon"><i class="fas fa-qrcode"></i> QR·MIRO</span> miro.com/educacion
+                    </div>
+                </div>
+                <!-- PADLET -->
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #c1dbfa; color: #2d5e9e;">📋</div>
+                        <div class="nombre-herramienta">PADLET</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #3a86ff;">
+                        <i class="fas fa-image"></i> Mural multimedia · lluvia de ideas
+                    </div>
+                    <div class="pros-contras">
+                        <div class="pros">✅ fácil, creativo</div>
+                        <div class="contras">⚠️ gratis limitado</div>
+                    </div>
+                    <div class="qr-simulado">
+                        <span class="qr-icon"><i class="fas fa-qrcode"></i> QR·PADLET</span> padlet.com/aula
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2 · GAMIFICACIÓN -->
+        <div class="categoria">
+            <div class="categoria-titulo" style="border-bottom-color: #ffb347; color: #b45f2a;">
+                <i class="fas fa-gamepad" style="font-size: 2rem;"></i> Aprender jugando · quizzes y flashcards
+            </div>
+            <div class="grid-herramientas">
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #5639e0; color: white;">🎮</div>
+                        <div class="nombre-herramienta">KAHOOT!</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #4616b1;">Preguntas y respuestas en vivo</div>
+                    <div class="pros-contras"><div class="pros">✅ todos participan</div><div class="contras">⏱️ montar quiz</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> kahoot.com/pt-BR</div>
+                </div>
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #ae90e2;">🔠</div>
+                        <div class="nombre-herramienta">Quizlet</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #7b4b9a;">Flashcards · vocabulario · equipos</div>
+                    <div class="pros-contras"><div class="pros">✅ intuitivo, juego</div><div class="contras">⚠️ buena conexión</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> quizlet.latest</div>
+                </div>
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #fdca40;">🔄</div>
+                        <div class="nombre-herramienta">Wordwall</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #f79824;">Actividades · plantillas · imprimible</div>
+                    <div class="pros-contras"><div class="pros">✅ versátil</div><div class="contras">⚠️ 5 gratis</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> wordwall.net/es</div>
+                </div>
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #b8f2e6;">🌐</div>
+                        <div class="nombre-herramienta">Wayground</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #07beb8;">Quizziz · informes detallados</div>
+                    <div class="pros-contras"><div class="pros">✅ corrección automática</div><div class="contras">⚠️ inglés</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> wayground.com</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3 · PRESENTACIONES INTERACTIVAS -->
+        <div class="categoria">
+            <div class="categoria-titulo" style="border-bottom-color: #ef476f; color: #b63e5a;">
+                <i class="fas fa-chalkboard-teacher" style="font-size: 2rem;"></i> Presentaciones que enganchan
+            </div>
+            <div class="grid-herramientas">
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #fbbb2d;">✨</div>
+                        <div class="nombre-herramienta">Genially</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #fd9e2a;">Paisajes aprendizaje · juegos · interactivo</div>
+                    <div class="pros-contras"><div class="pros">✅ plantillas, embebible</div><div class="contras">⚠️ abierto, tiempo</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> genially.com</div>
+                </div>
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #1b98a0; color: white;">📊</div>
+                        <div class="nombre-herramienta">Nearpod</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #247ba0;">Evaluación en vivo · draw it · ritmo propio</div>
+                    <div class="pros-contras"><div class="pros">✅ participación, feedback</div><div class="contras">⚠️ internet, curva</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> nearpod.com/library</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4 · INTELIGENCIA ARTIFICIAL -->
+        <div class="categoria">
+            <div class="categoria-titulo" style="border-bottom-color: #3a0ca3; color: #3a0ca3;">
+                <i class="fas fa-robot" style="font-size: 2rem;"></i> IA para docentes y estudiantes
+            </div>
+            <div class="grid-herramientas">
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #0a3142; color: white;">🤖</div>
+                        <div class="nombre-herramienta">Copilot</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #2c497f;">Chat con contexto · Crear agente</div>
+                    <div class="pros-contras"><div class="pros">✅ personalizable</div><div class="contras">⚠️ Copilot Pro</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> copilot.microsoft/agente</div>
+                </div>
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #f4b942;">📓</div>
+                        <div class="nombre-herramienta">Notebook LM</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #d68c45;">Cuaderno IA · resúmenes · podcast</div>
+                    <div class="pros-contras"><div class="pros">✅ síntesis, múltiples formatos</div><div class="contras">⚠️ pasividad</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> notebooklm.google</div>
+                </div>
+                <div class="tarjeta">
+                    <div class="cabecera-herramienta">
+                        <div class="logo-simulado" style="background: #78c6a3;">🧠</div>
+                        <div class="nombre-herramienta">Napkin AI</div>
+                    </div>
+                    <div class="ejemplo" style="border-left-color: #2f9e79;">Texto → mapas conceptuales</div>
+                    <div class="pros-contras"><div class="pros">✅ comprensión visual</div><div class="contras">⚠️ inglés, personalización</div></div>
+                    <div class="qr-simulado"><span class="qr-icon">QR</span> napkin.ai</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN EXTRA: MENSAJE CLAVE Y QR GLOBAL -->
+        <div class="footer">
+            <p style="color: white; max-width: 60%;">
+                <i class="fas fa-lightbulb" style="color: #ffd966;"></i>  
+                “No es la herramienta, es el uso pedagógico”.  
+                <br>📌 MURAL para ABP · Quizlet/Nearpod para cierres · Copilot y Notebook LM potencian pensamiento crítico.
+            </p>
+            <div class="qr-aula">
+                <i class="fas fa-qrcode" style="font-size: 2rem; color: #073b4c;"></i>
+                <span>📲 QR aula digital · accede a la guía</span>
+            </div>
+        </div>
+
+        <!-- PEQUEÑA NOTA: LOGOS SIMULADOS (leyenda) -->
+        <div style="display: flex; justify-content: flex-end; margin-top: 25px; gap: 20px; color: #3d6e7a; font-size: 0.8rem; flex-wrap: wrap;">
+            <span><i class="fas fa-check-circle" style="color: #2a9d8f;"></i> Pros / Contras basados en la tabla docente</span>
+            <span><i class="fas fa-qrcode"></i> QR simulados para experiencia interactiva</span>
+            <span><i class="fas fa-paint-bucket"></i> Infografía colorida · uso libre</span>
+        </div>
+    </div> <!-- .contenido -->
+</div> <!-- .infografia -->
+</body>
+</html>
