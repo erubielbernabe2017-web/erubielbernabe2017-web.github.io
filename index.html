@@ -3,456 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía · Herramientas de Educación Digital</title>
-    <!-- Font Awesome 6 (iconos y logos simulados) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>ETRR | Escuelas Técnicas Roberto Rocca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --etrr-navy: #002D72;
+            --etrr-red: #E30613;
+            --etrr-gray: #707070;
+            --etrr-bg: #F8FAFC;
         }
-        body {
-            background: linear-gradient(145deg, #f6f9fc 0%, #e9f1f8 100%);
-            font-family: 'Inter', 'Poppins', sans-serif;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .infografia {
-            max-width: 1280px;
-            width: 100%;
-            background: white;
-            border-radius: 48px 48px 32px 32px;
-            box-shadow: 0 20px 40px -10px rgba(0,20,40,0.25);
-            padding: 40px 35px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.5);
-        }
-        /* decoración colorida */
-        .infografia::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, #ffd16655, #ff9e0055);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        .infografia::after {
-            content: '';
-            position: absolute;
-            bottom: -60px;
-            left: -30px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, #06d6a055, #118ab255);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        .contenido {
-            position: relative;
-            z-index: 2;
-        }
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: #073b4c;
-            letter-spacing: -1px;
-            margin-bottom: 0.2em;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.02);
-        }
-        h1 span {
-            background: #ffd166;
-            padding: 8px 18px;
-            border-radius: 60px;
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #1e3d42;
-        }
-        .subtitulo {
-            font-size: 1.3rem;
-            color: #2d6a7a;
-            margin-bottom: 45px;
-            font-weight: 500;
-            border-left: 12px solid #06d6a0;
-            padding-left: 25px;
-            background: #f0f9ff60;
-            border-radius: 0 20px 20px 0;
-            line-height: 1.6;
-        }
-        .categoria {
-            margin-top: 45px;
-        }
-        .categoria-titulo {
-            font-size: 1.9rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            padding-bottom: 8px;
-            border-bottom: 5px solid;
-        }
-        .grid-herramientas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 28px;
-        }
-        .tarjeta {
-            background: white;
-            border-radius: 32px;
-            padding: 22px 20px;
-            box-shadow: 0 10px 18px rgba(0,30,50,0.06);
-            transition: 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #ffffff80;
-            backdrop-filter: blur(2px);
-        }
-        .tarjeta:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 30px -8px rgba(0,120,200,0.2);
-            border-color: #b8e2f2;
-        }
-        .cabecera-herramienta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 14px;
-        }
-        .logo-simulado {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(145deg, #f0f3fa, #e6ecf5);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1a535c;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
-        }
-        .nombre-herramienta {
-            font-size: 1.55rem;
-            font-weight: 700;
-            color: #0a3142;
-            line-height: 1.2;
-        }
-        .ejemplo {
-            background: #fafbfc;
-            padding: 12px 14px;
-            border-radius: 20px;
-            margin: 14px 0;
-            font-size: 0.95rem;
-            color: #2c4c5b;
-            border-left: 5px solid;
-            word-break: break-word;
-        }
-        .pros-contras {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            margin: 10px 0;
-            font-size: 0.9rem;
-        }
-        .pros {
-            background: #e1f7e7;
-            padding: 10px;
-            border-radius: 18px;
-            flex: 1;
-            color: #0f5c3f;
-            font-weight: 500;
-        }
-        .contras {
-            background: #ffe7e5;
-            padding: 10px;
-            border-radius: 18px;
-            flex: 1;
-            color: #a43a3a;
-            font-weight: 500;
-        }
-        .qr-simulado {
-            margin-top: 16px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: #edf2fb;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #0b4f6c;
-            border: 1px dashed #3f8f9b;
-        }
-        .qr-icon {
-            background: black;
-            color: white;
-            padding: 6px 10px;
-            border-radius: 16px;
-            font-family: monospace;
-            letter-spacing: 2px;
-        }
-        i {
-            margin-right: 6px;
-            color: #2b7a78;
-        }
-        .footer {
-            margin-top: 60px;
-            background: #0b3b4b;
-            color: white;
-            padding: 32px 28px;
-            border-radius: 40px 40px 24px 24px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer p {
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        .qr-aula {
-            background: white;
-            padding: 12px 18px;
-            border-radius: 30px;
-            color: #073b4c;
-            font-weight: 700;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-        @media (max-width: 800px) {
-            h1 { font-size: 2.4rem; }
-            .grid-herramientas { grid-template-columns: 1fr; }
-        }
-        .badge {
-            background: #ffe45c;
-            border-radius: 50px;
-            padding: 5px 14px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #1e3d42;
-        }
+        .bg-navy { background-color: var(--etrr-navy); }
+        .text-navy { color: var(--etrr-navy); }
+        .bg-red { background-color: var(--etrr-red); }
+        .border-red { border-color: var(--etrr-red); }
+        .lang-es .pt { display: none; }
+        .lang-pt .es { display: none; }
+        .tool-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border-top: 5px solid var(--etrr-navy); }
+        .tool-card:hover { transform: translateY(-8px); border-top-color: var(--etrr-red); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .filter-btn.active { background-color: var(--etrr-red); color: white; border-color: var(--etrr-red); }
+        .tool-logo-box { width: 52px; height: 52px; background: white; border: 1.5px solid #E2E8F0; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .gemini-badge { background: linear-gradient(90deg, #4285F4, #9B72CB, #D96570); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
     </style>
 </head>
-<body>
-<div class="infografia">
-    <div class="contenido">
-        
-        <!-- TÍTULO PRINCIPAL -->
-        <h1>
-            <i class="fas fa-graduation-cap" style="color: #118ab2;"></i> AULA 4.0 
-            <span>herramientas que transforman</span>
-        </h1>
-        <div class="subtitulo">
-            <i class="fas fa-magic" style="color: #ef476f;"></i> Colaboración · IA · Gamificación · Creatividad — Infografía interactiva para docentes innovadores
-        </div>
+<body class="bg-slate-50 font-sans lang-es" id="bodyTag">
 
-        <!-- SECCIÓN 1 · COLABORACIÓN VISUAL -->
-        <div class="categoria">
-            <div class="categoria-titulo" style="border-bottom-color: #06d6a0; color: #1b7a6b;">
-                <i class="fas fa-users" style="font-size: 2rem;"></i> Pizarras y murales colaborativos
-            </div>
-            <div class="grid-herramientas">
-                <!-- MURAL -->
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #f7e05e30; color: #c47c0e;">📌</div>
-                        <div class="nombre-herramienta">MURAL</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #f4c542;">
-                        <i class="fas fa-clipboard-check"></i> Acuerdos de convivencia · ABP<br>
-                        <small>🔗 app.mural.co/etrr7325</small>
-                    </div>
-                    <div class="pros-contras">
-                        <div class="pros">✅ intuitivo · gifs · embebible</div>
-                        <div class="contras">⚠️ cuenta oblig. · pocos murales</div>
-                    </div>
-                    <div class="qr-simulado">
-                        <span class="qr-icon"><i class="fas fa-qrcode"></i> QR·MURAL</span> 
-                        mural.co/edu-proyectos
-                        <i class="fas fa-copy" style="color: gray;"></i>
-                    </div>
+    <header class="bg-navy text-white shadow-2xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-6">
+                <div class="h-16 w-48 bg-white rounded-lg flex items-center justify-center p-3 shadow-inner">
+                    <span class="text-[9px] font-black text-slate-400 text-center uppercase">Logo Institucional<br>ETRR</span>
                 </div>
-                <!-- MIRO -->
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #ffd98c; color: #994b1e;">🎯</div>
-                        <div class="nombre-herramienta">MIRO</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #e36414;">
-                        <i class="fas fa-brain"></i> Pizarra infinita · trabajo síncrono
-                    </div>
-                    <div class="pros-contras">
-                        <div class="pros">✅ colaboración remota</div>
-                        <div class="contras">⚠️ consigna clara · internet</div>
-                    </div>
-                    <div class="qr-simulado">
-                        <span class="qr-icon"><i class="fas fa-qrcode"></i> QR·MIRO</span> miro.com/educacion
-                    </div>
-                </div>
-                <!-- PADLET -->
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #c1dbfa; color: #2d5e9e;">📋</div>
-                        <div class="nombre-herramienta">PADLET</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #3a86ff;">
-                        <i class="fas fa-image"></i> Mural multimedia · lluvia de ideas
-                    </div>
-                    <div class="pros-contras">
-                        <div class="pros">✅ fácil, creativo</div>
-                        <div class="contras">⚠️ gratis limitado</div>
-                    </div>
-                    <div class="qr-simulado">
-                        <span class="qr-icon"><i class="fas fa-qrcode"></i> QR·PADLET</span> padlet.com/aula
-                    </div>
+                <div class="hidden lg:block w-px h-12 bg-white/20"></div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight uppercase leading-none">Escuelas Técnicas</h1>
+                    <p class="text-sm font-light tracking-[0.35em] text-red-500 uppercase">Roberto Rocca</p>
                 </div>
             </div>
-        </div>
 
-        <!-- SECCIÓN 2 · GAMIFICACIÓN -->
-        <div class="categoria">
-            <div class="categoria-titulo" style="border-bottom-color: #ffb347; color: #b45f2a;">
-                <i class="fas fa-gamepad" style="font-size: 2rem;"></i> Aprender jugando · quizzes y flashcards
-            </div>
-            <div class="grid-herramientas">
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #5639e0; color: white;">🎮</div>
-                        <div class="nombre-herramienta">KAHOOT!</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #4616b1;">Preguntas y respuestas en vivo</div>
-                    <div class="pros-contras"><div class="pros">✅ todos participan</div><div class="contras">⏱️ montar quiz</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> kahoot.com/pt-BR</div>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex flex-col items-end border-r border-white/20 pr-6">
+                    <span class="text-[10px] font-bold text-white/60 uppercase tracking-widest">Desarrollado con</span>
+                    <span class="gemini-badge text-xs">Google Gemini</span>
                 </div>
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #ae90e2;">🔠</div>
-                        <div class="nombre-herramienta">Quizlet</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #7b4b9a;">Flashcards · vocabulario · equipos</div>
-                    <div class="pros-contras"><div class="pros">✅ intuitivo, juego</div><div class="contras">⚠️ buena conexión</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> quizlet.latest</div>
-                </div>
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #fdca40;">🔄</div>
-                        <div class="nombre-herramienta">Wordwall</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #f79824;">Actividades · plantillas · imprimible</div>
-                    <div class="pros-contras"><div class="pros">✅ versátil</div><div class="contras">⚠️ 5 gratis</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> wordwall.net/es</div>
-                </div>
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #b8f2e6;">🌐</div>
-                        <div class="nombre-herramienta">Wayground</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #07beb8;">Quizziz · informes detallados</div>
-                    <div class="pros-contras"><div class="pros">✅ corrección automática</div><div class="contras">⚠️ inglés</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> wayground.com</div>
+                <div class="flex bg-black/30 p-1.5 rounded-xl border border-white/10">
+                    <button onclick="setLang('es')" id="btn-es" class="px-5 py-2 rounded-lg font-bold text-xs bg-white text-navy shadow-lg transition-all">ES</button>
+                    <button onclick="setLang('pt')" id="btn-pt" class="px-5 py-2 rounded-lg font-bold text-xs hover:bg-white/10 transition-all">PT</button>
                 </div>
             </div>
         </div>
+    </header>
 
-        <!-- SECCIÓN 3 · PRESENTACIONES INTERACTIVAS -->
-        <div class="categoria">
-            <div class="categoria-titulo" style="border-bottom-color: #ef476f; color: #b63e5a;">
-                <i class="fas fa-chalkboard-teacher" style="font-size: 2rem;"></i> Presentaciones que enganchan
-            </div>
-            <div class="grid-herramientas">
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #fbbb2d;">✨</div>
-                        <div class="nombre-herramienta">Genially</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #fd9e2a;">Paisajes aprendizaje · juegos · interactivo</div>
-                    <div class="pros-contras"><div class="pros">✅ plantillas, embebible</div><div class="contras">⚠️ abierto, tiempo</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> genially.com</div>
+    <section class="bg-white border-b border-slate-200 py-10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
+                <div class="relative w-full lg:w-1/3">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
+                    <input type="text" id="searchInput" onkeyup="render()" 
+                        placeholder="Buscar herramienta, país o uso..." 
+                        class="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-navy focus:outline-none transition-all font-medium">
                 </div>
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #1b98a0; color: white;">📊</div>
-                        <div class="nombre-herramienta">Nearpod</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #247ba0;">Evaluación en vivo · draw it · ritmo propio</div>
-                    <div class="pros-contras"><div class="pros">✅ participación, feedback</div><div class="contras">⚠️ internet, curva</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> nearpod.com/library</div>
-                </div>
-            </div>
-        </div>
 
-        <!-- SECCIÓN 4 · INTELIGENCIA ARTIFICIAL -->
-        <div class="categoria">
-            <div class="categoria-titulo" style="border-bottom-color: #3a0ca3; color: #3a0ca3;">
-                <i class="fas fa-robot" style="font-size: 2rem;"></i> IA para docentes y estudiantes
-            </div>
-            <div class="grid-herramientas">
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #0a3142; color: white;">🤖</div>
-                        <div class="nombre-herramienta">Copilot</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #2c497f;">Chat con contexto · Crear agente</div>
-                    <div class="pros-contras"><div class="pros">✅ personalizable</div><div class="contras">⚠️ Copilot Pro</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> copilot.microsoft/agente</div>
-                </div>
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #f4b942;">📓</div>
-                        <div class="nombre-herramienta">Notebook LM</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #d68c45;">Cuaderno IA · resúmenes · podcast</div>
-                    <div class="pros-contras"><div class="pros">✅ síntesis, múltiples formatos</div><div class="contras">⚠️ pasividad</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> notebooklm.google</div>
-                </div>
-                <div class="tarjeta">
-                    <div class="cabecera-herramienta">
-                        <div class="logo-simulado" style="background: #78c6a3;">🧠</div>
-                        <div class="nombre-herramienta">Napkin AI</div>
-                    </div>
-                    <div class="ejemplo" style="border-left-color: #2f9e79;">Texto → mapas conceptuales</div>
-                    <div class="pros-contras"><div class="pros">✅ comprensión visual</div><div class="contras">⚠️ inglés, personalización</div></div>
-                    <div class="qr-simulado"><span class="qr-icon">QR</span> napkin.ai</div>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button onclick="filterCategory('all')" class="filter-btn active px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">Todo</button>
+                    <button onclick="filterCategory('ia')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">🤖 IA</button>
+                    <button onclick="filterCategory('gamific')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">🎮 Gamificación</button>
+                    <button onclick="filterCategory('stem')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">⚙️ STEM</button>
+                    <button onclick="filterCategory('colab')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">👥 Colab</button>
+                    <button onclick="filterCategory('eval')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">📝 Eval</button>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- SECCIÓN EXTRA: MENSAJE CLAVE Y QR GLOBAL -->
-        <div class="footer">
-            <p style="color: white; max-width: 60%;">
-                <i class="fas fa-lightbulb" style="color: #ffd966;"></i>  
-                “No es la herramienta, es el uso pedagógico”.  
-                <br>📌 MURAL para ABP · Quizlet/Nearpod para cierres · Copilot y Notebook LM potencian pensamiento crítico.
-            </p>
-            <div class="qr-aula">
-                <i class="fas fa-qrcode" style="font-size: 2rem; color: #073b4c;"></i>
-                <span>📲 QR aula digital · accede a la guía</span>
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="toolsGrid">
+            </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-16 border-t-8 border-red">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs font-bold tracking-[0.4em] uppercase mb-8 opacity-40">Escuelas Técnicas Roberto Rocca</p>
+            <div class="inline-flex flex-col items-center gap-4 p-8 bg-white/5 rounded-3xl border border-white/10">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="shield-check" class="text-blue-400"></i>
+                    <span class="text-sm font-medium">Generado responsablemente por <span class="gemini-badge">Google Gemini</span></span>
+                </div>
+                <p class="text-[10px] text-slate-400 max-w-md">Este catálogo fue desarrollado utilizando Inteligencia Artificial para potenciar la labor docente en México, Argentina y Brasil, bajo los principios de innovación y excelencia de la ETRR.</p>
             </div>
         </div>
+    </footer>
 
-        <!-- PEQUEÑA NOTA: LOGOS SIMULADOS (leyenda) -->
-        <div style="display: flex; justify-content: flex-end; margin-top: 25px; gap: 20px; color: #3d6e7a; font-size: 0.8rem; flex-wrap: wrap;">
-            <span><i class="fas fa-check-circle" style="color: #2a9d8f;"></i> Pros / Contras basados en la tabla docente</span>
-            <span><i class="fas fa-qrcode"></i> QR simulados para experiencia interactiva</span>
-            <span><i class="fas fa-paint-bucket"></i> Infografía colorida · uso libre</span>
-        </div>
-    </div> <!-- .contenido -->
-</div> <!-- .infografia -->
+    <script>
+        const tools = [
+            // ORIGINALES CSV
+            { name: "MURAL", cat: "colab", countries: ["🇦🇷", "🇲🇽"], logo: "", es_desc: "Pizarra digital para pensamiento visual y registros de acuerdos.", pt_desc: "Lousa digital para pensamento visual e registros de acordos.", es_pros: "Intuitivo y fácil de manipular.", es_cons: "Límite de murales gratuitos.", es_app: "Acuerdos de convivencia y proyectos ABP.", url: "https://www.mural.co/" },
+            { name: "Quizlet", cat: "gamific", countries: ["🇲🇽", "🇧🇷"], logo: "", es_desc: "Plataforma de estudio mediante fichas interactivas.", pt_desc: "Plataforma de estudo por meio de cartões interativos.", es_pros: "Ideal para retención de términos técnicos.", es_cons: "Publicidad en versión gratuita.", es_app: "Vocabulario de taller y mantenimiento.", url: "https://quizlet.com/" },
+            { name: "NotebookLM", cat: "ia", countries: ["🇲🇽", "🇧🇷"], logo: "", es_desc: "IA de Google para analizar fuentes y sintetizar información.", pt_desc: "IA do Google para analisar fontes e sintetizar informações.", es_pros: "Crea podcasts y resúmenes de tus propios PDF.", es_cons: "Riesgo de pasividad cognitiva en el alumno.", es_app: "Análisis de manuales pesados de ingeniería.", url: "https://notebooklm.google/" },
+            { name: "Napkin AI", cat: "ia", countries: ["🇲🇽"], logo: "", es_desc: "IA que transforma texto en esquemas visuales.", pt_desc: "IA que transforma texto em esquemas visuais.", es_pros: "Visualización instantánea de procesos.", es_cons: "Mejor funcionamiento en inglés.", es_app: "Diagramas de flujos técnicos.", url: "https://www.napkin.ai/" },
+            { name: "Wordwall", cat: "gamific", countries: ["🇧🇷", "🇦🇷", "🇲🇽"], logo: "", es_desc: "Juegos interactivos y material imprimible.", pt_desc: "Jogos interativos e material imprimível.", es_pros: "Plantillas listas para usar.", es_cons: "Límite de 5 actividades gratuitas.", es_app: "Seguridad Industrial gamificada.", url: "https://wordwall.net/" },
+            
+            // REGIONALES E INDISPENSABLES
+            { name: "GeoGebra", cat: "stem", countries: ["🇦🇷", "🇲🇽"], logo: "", es_desc: "Software de matemáticas dinámicas para STEM.", pt_desc: "Software de matemática dinâmica para STEM.", es_pros: "Potente, gratuito y estándar técnico.", es_cons: "Curva de aprendizaje inicial.", es_app: "Cálculos de resistencia y física.", url: "https://www.geogebra.org/" },
+            { name: "Canva", cat: "colab", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "", es_desc: "Diseño gráfico colaborativo profesional.", pt_desc: "Design gráfico colaborativo profissional.", es_pros: "Canva Education gratis para docentes.", es_cons: "Diseños que pueden ser genéricos.", es_app: "Infografías de proyectos de taller.", url: "https://www.canva.com/" },
+            { name: "Genially", cat: "gamific", countries: ["🇲🇽", "🇦🇷"], logo: "", es_desc: "Presentaciones interactivas y escape rooms.", pt_desc: "Apresentações interativas e escape rooms.", es_pros: "Interactividad de alto nivel visual.", es_cons: "Carga pesada en conexiones lentas.", es_app: "Manuales de taller interactivos.", url: "https://genial.ly/" },
+            { name: "Padlet", cat: "colab", countries: ["🇦🇷", "🇧🇷"], logo: "", es_desc: "Muro digital colaborativo para recursos.", pt_desc: "Mural digital colaborativo para recursos.", es_pros: "Extremadamente sencillo de usar.", es_cons: "Pocos muros en la versión gratuita.", es_app: "Bitácora digital de evidencias.", url: "https://padlet.com/" },
+            { name: "Nearpod", cat: "eval", countries: ["🇲🇽", "🇦🇷"], logo: "", es_desc: "Lecciones interactivas con VR y 3D.", pt_desc: "Lições interativas com VR e 3D.", es_pros: "Sincronización total en tiempo real.", es_cons: "Dependencia de conexión estable.", es_app: "Visitas virtuales a plantas industriales.", url: "https://nearpod.com/" },
+            { name: "Classroom", cat: "colab", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "", es_desc: "Gestión centralizada de aprendizaje.", pt_desc: "Gestão centralizada de aprendizagem.", es_pros: "Integración nativa con Google ETRR.", es_cons: "Interfaz poco flexible visualmente.", es_app: "Eje central de gestión académica.", url: "https://classroom.google.com/" },
+            
+            // EVALUACIÓN Y CIERRE
+            { name: "Socrative", cat: "eval", countries: ["🇦🇷", "🇧🇷"], logo: "", es_desc: "Evaluación rápida en tiempo real.", pt_desc: "Avaliação rápida em tempo real.", es_pros: "Informes inmediatos del progreso.", es_cons: "Diseño muy austero.", es_app: "Tickets de salida al finalizar taller.", url: "https://www.socrative.com/" },
+            { name: "Kahoot!", cat: "gamific", countries: ["🇲🇽", "🇧🇷", "🇦🇷"], logo: "", es_desc: "Concursos de preguntas gamificados.", pt_desc: "Concursos de perguntas gamificados.", es_pros: "Máxima participación y energía.", es_cons: "Puede ser ruidoso en el aula.", es_app: "Repaso lúdico antes de exámenes.", url: "https://kahoot.com/" },
+            { name: "Google Forms", cat: "eval", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "", es_desc: "Exámenes y recolección de datos.", pt_desc: "Exames e coleta de dados.", es_pros: "Autocalificable y ordenado.", es_cons: "Estética limitada.", es_app: "Evaluaciones teóricas de seguridad.", url: "https://forms.google.com" },
+            { name: "Quizizz", cat: "gamific", countries: ["🇲🇽"], logo: "", es_desc: "Cuestionarios al ritmo del alumno.", pt_desc: "Questionários no ritmo do aluno.", es_pros: "Informes de resultados muy profundos.", es_cons: "Interfaz cargada de memes.", es_app: "Tareas de refuerzo fuera de clase.", url: "https://quizizz.com" },
+            { name: "Mentimeter", cat: "colab", countries: ["🇦🇷", "🇧🇷"], logo: "", es_desc: "Presentaciones con encuestas en vivo.", pt_desc: "Apresentações com enquetes ao vivo.", es_pros: "Fomenta participación anónima.", es_cons: "Límite de preguntas por sesión.", es_app: "Lluvia de ideas para proyectos.", url: "https://www.mentimeter.com" },
+            { name: "Edpuzzle", cat: "eval", countries: ["🇲🇽", "🇦🇷"], logo: "", es_desc: "Vídeos educativos interactivos.", pt_desc: "Vídeos educativos interativos.", es_pros: "Asegura la atención en videos.", es_cons: "Toma tiempo preparar las pausas.", es_app: "Flipped Classroom técnica.", url: "https://edpuzzle.com" }
+        ];
+
+        let currentCat = 'all';
+
+        function render() {
+            const grid = document.getElementById('toolsGrid');
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = tools.filter(t => {
+                const searchStr = (t.name + t.es_desc + t.countries.join('')).toLowerCase();
+                const matchesSearch = searchStr.includes(searchInput);
+                const matchesCat = currentCat === 'all' || t.cat === currentCat;
+                return matchesSearch && matchesCat;
+            });
+
+            grid.innerHTML = filtered.map(t => `
+                <div class="tool-card bg-white rounded-3xl shadow-sm p-8 flex flex-col relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex gap-4">
+                            <div class="tool-logo-box">
+                                ${t.logo ? `<img src="${t.logo}" alt="${t.name}">` : `<i data-lucide="box" class="text-slate-200"></i>`}
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-navy leading-none mb-1">${t.name}</h3>
+                                <div class="flex gap-1">
+                                    ${t.countries.map(f => `<span class="text-[10px] bg-slate-50 px-1 border rounded">${f}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=55x55&data=${t.url}" class="border p-1 rounded-lg bg-white opacity-80">
+                    </div>
+
+                    <p class="text-sm text-slate-500 mb-8 es leading-relaxed font-medium">${t.es_desc}</p>
+                    <p class="text-sm text-slate-500 mb-8 pt leading-relaxed font-medium">${t.pt_desc}</p>
+
+                    <div class="grid grid-cols-1 gap-3 mb-8">
+                        <div class="bg-green-50 p-3 rounded-xl border-l-4 border-green-500">
+                            <span class="text-[9px] font-black text-green-700 uppercase block mb-1">Puntos a Favor</span>
+                            <p class="text-[11px] text-slate-700 font-bold leading-tight">${t.es_pros}</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-xl border-l-4 border-red-500">
+                            <span class="text-[9px] font-black text-red-700 uppercase block mb-1">Limitaciones</span>
+                            <p class="text-[11px] text-slate-700 font-bold leading-tight">${t.es_cons}</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto border-t border-slate-100 pt-6">
+                        <div class="mb-5">
+                            <span class="text-[9px] font-black text-red-600 uppercase tracking-widest block mb-1">Aplicación Técnica ETRR</span>
+                            <p class="text-xs font-bold text-navy es">${t.es_app}</p>
+                            <p class="text-xs font-bold text-navy pt">${t.pt_app}</p>
+                        </div>
+                        <a href="${t.url}" target="_blank" class="w-full py-4 bg-navy text-white rounded-2xl font-black text-xs flex items-center justify-center gap-3 hover:bg-red transition-all shadow-lg shadow-navy/20 group">
+                            <span class="es tracking-widest">ABRIR RECURSO</span><span class="pt tracking-widest">ABRIR RECURSO</span>
+                            <i data-lucide="external-link" size="14" class="group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function filterCategory(cat) {
+            currentCat = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('onclick').includes(cat)) btn.classList.add('active');
+            });
+            render();
+        }
+
+        function setLang(lang) {
+            const body = document.getElementById('bodyTag');
+            const esBtn = document.getElementById('btn-es');
+            const ptBtn = document.getElementById('btn-pt');
+            if(lang === 'es') {
+                body.classList.replace('lang-pt', 'lang-es');
+                esBtn.className = "px-5 py-2 rounded-lg font-bold text-xs bg-white text-navy shadow-lg transition-all";
+                ptBtn.className = "px-5 py-2 rounded-lg font-bold text-xs hover:bg-white/10 transition-all";
+            } else {
+                body.classList.replace('lang-es', 'lang-pt');
+                ptBtn.className = "px-5 py-2 rounded-lg font-bold text-xs bg-white text-navy shadow-lg transition-all";
+                esBtn.className = "px-5 py-2 rounded-lg font-bold text-xs hover:bg-white/10 transition-all";
+            }
+        }
+
+        render();
+    </script>
 </body>
 </html>
