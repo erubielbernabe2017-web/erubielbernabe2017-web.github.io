@@ -36,14 +36,17 @@
                 </div>
                 <div class="hidden lg:block w-px h-12 bg-white/20"></div>
                 <div>
-                    <h1 class="text-xl font-bold tracking-tight uppercase leading-none">Comunidad Global de Práctica y Aprendizaje</h1>
-                    <p class="text-sm font-light tracking-[0.35em] text-red-500 uppercase">Educación Digital</p>
+                    <h1 class="text-xl font-bold tracking-tight uppercase leading-none es">Comunidad Global de Práctica y Aprendizaje</h1>
+                    <h1 class="text-xl font-bold tracking-tight uppercase leading-none pt">Comunidade Global de Prática e Aprendizagem</h1>
+                    <p class="text-sm font-light tracking-[0.35em] text-red-500 uppercase es">Educación Digital</p>
+                    <p class="text-sm font-light tracking-[0.35em] text-red-500 uppercase pt">Educação Digital</p>
                 </div>
             </div>
 
             <div class="flex items-center gap-6">
                 <div class="hidden md:flex flex-col items-end border-r border-white/20 pr-6">
-                    <span class="text-[10px] font-bold text-white/60 uppercase tracking-widest">Desarrollado con</span>
+                    <span class="text-[10px] font-bold text-white/60 uppercase tracking-widest es">Desarrollado con</span>
+                    <span class="text-[10px] font-bold text-white/60 uppercase tracking-widest pt">Desenvolvido com</span>
                     <span class="gemini-badge text-xs">Google Gemini</span>
                 </div>
                 <div class="flex bg-black/30 p-1.5 rounded-xl border border-white/10">
@@ -54,31 +57,44 @@
         </div>
     </header>
 
+    <section class="bg-navy border-t border-white/10 py-6">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-4xl es">
+                <strong>Catálogo de Recursos Digitales:</strong> Una selección estratégica de herramientas tecnológicas diseñada para fortalecer las competencias pedagógicas y técnicas de los docentes en la red de escuelas técnicas. Explore soluciones de Inteligencia Artificial, STEM y colaboración adaptadas al entorno industrial.
+            </p>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-4xl pt">
+                <strong>Catálogo de Recursos Digitais:</strong> Uma seleção estratégica de ferramentas tecnológicas desenhada para fortalecer as competências pedagógicas e técnicas dos docentes na rede de escolas técnicas. Explore soluções de Inteligência Artificial, STEM e colaboração adaptadas ao ambiente industrial.
+            </p>
+        </div>
+    </section>
+
     <section class="bg-white border-b border-slate-200 py-10 shadow-sm">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
                 <div class="relative w-full lg:w-1/3">
                     <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
                     <input type="text" id="searchInput" onkeyup="render()" 
-                        placeholder="Buscar herramienta, país o uso..." 
+                        placeholder="Buscar..." 
                         class="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-navy focus:outline-none transition-all font-medium">
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-2">
-                    <button onclick="filterCategory('all')" class="filter-btn active px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">Todo</button>
+                    <button onclick="filterCategory('all')" class="filter-btn active px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all es">Todo</button>
+                    <button onclick="filterCategory('all')" class="filter-btn active px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all pt">Tudo</button>
                     <button onclick="filterCategory('ia')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">🤖 IA</button>
-                    <button onclick="filterCategory('gamific')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">🎮 Gamificación</button>
+                    <button onclick="filterCategory('gamific')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all es">🎮 Gamificación</button>
+                    <button onclick="filterCategory('gamific')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all pt">🎮 Gamificação</button>
                     <button onclick="filterCategory('stem')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">⚙️ STEM</button>
                     <button onclick="filterCategory('colab')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">👥 Colab</button>
-                    <button onclick="filterCategory('eval')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all">📝 Eval</button>
+                    <button onclick="filterCategory('eval')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all es">📝 Eval</button>
+                    <button onclick="filterCategory('eval')" class="filter-btn px-5 py-2.5 rounded-xl border border-slate-200 text-[10px] font-black uppercase tracking-widest transition-all pt">📝 Avaliação</button>
                 </div>
             </div>
         </div>
     </section>
 
     <main class="max-w-7xl mx-auto px-6 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="toolsGrid">
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="toolsGrid"></div>
     </main>
 
     <footer class="bg-slate-900 text-white py-16 border-t-8 border-red">
@@ -87,37 +103,34 @@
             <div class="inline-flex flex-col items-center gap-4 p-8 bg-white/5 rounded-3xl border border-white/10">
                 <div class="flex items-center gap-3">
                     <i data-lucide="shield-check" class="text-blue-400"></i>
-                    <span class="text-sm font-medium">Generado responsablemente por <span class="gemini-badge">Google Gemini</span></span>
+                    <span class="text-sm font-medium es">Generado responsablemente por <span class="gemini-badge">Google Gemini</span></span>
+                    <span class="text-sm font-medium pt">Gerado responsavelmente por <span class="gemini-badge">Google Gemini</span></span>
                 </div>
-                <p class="text-[10px] text-slate-400 max-w-md">Este catálogo fue desarrollado utilizando Inteligencia Artificial para potenciar la labor docente en México, Argentina y Brasil, bajo los principios de innovación y excelencia de los Programas educativos Roberto Rocca.</p>
+                <p class="text-[10px] text-slate-400 max-w-md es">Este catálogo fue desarrollado utilizando Inteligencia Artificial para potenciar la labor docente en México, Argentina y Brasil, bajo los principios de innovación y excelencia de los Programas educativos Roberto Rocca.</p>
+                <p class="text-[10px] text-slate-400 max-w-md pt">Este catálogo foi desenvolvido utilizando Inteligência Artificial para potencializar o trabalho docente no México, Argentina e Brasil, sob os princípios de inovação e excelência dos Programas Educativos Roberto Rocca.</p>
             </div>
         </div>
     </footer>
 
     <script>
         const tools = [
-            // ORIGINALES CSV
-            { name: "MURAL", cat: "colab", countries: ["🇦🇷", "🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/mural.png", es_desc: "Pizarra digital para pensamiento visual y registros de acuerdos.", pt_desc: "Lousa digital para pensamento visual e registros de acordos.", es_pros: "Intuitivo y fácil de manipular.", es_cons: "Límite de murales gratuitos.", es_app: "Acuerdos de convivencia y proyectos ABP.", url: "https://www.mural.co/" },
-            { name: "Quizlet", cat: "gamific", countries: ["🇲🇽", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/quizlet.png", es_desc: "Plataforma de estudio mediante fichas interactivas.", pt_desc: "Plataforma de estudo por meio de cartões interativos.", es_pros: "Ideal para retención de términos técnicos.", es_cons: "Publicidad en versión gratuita.", es_app: "Vocabulario de taller y mantenimiento.", url: "https://quizlet.com/" },
-            { name: "NotebookLM", cat: "ia", countries: ["🇲🇽", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/NotebookLM.png", es_desc: "IA de Google para analizar fuentes y sintetizar información.", pt_desc: "IA do Google para analisar fontes e sintetizar informações.", es_pros: "Crea podcasts y resúmenes de tus propios PDF.", es_cons: "Riesgo de pasividad cognitiva en el alumno.", es_app: "Análisis de manuales pesados de ingeniería.", url: "https://notebooklm.google/" },
-            { name: "Napkin AI", cat: "ia", countries: ["🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/NAPKIN.png", es_desc: "IA que transforma texto en esquemas visuales.", pt_desc: "IA que transforma texto em esquemas visuais.", es_pros: "Visualización instantánea de procesos.", es_cons: "Mejor funcionamiento en inglés.", es_app: "Diagramas de flujos técnicos.", url: "https://www.napkin.ai/" },
-            { name: "Wordwall", cat: "gamific", countries: ["🇧🇷", "🇦🇷", "🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Wordwall.png", es_desc: "Juegos interactivos y material imprimible.", pt_desc: "Jogos interativos e material imprimível.", es_pros: "Plantillas listas para usar.", es_cons: "Límite de 5 actividades gratuitas.", es_app: "Seguridad Industrial gamificada.", url: "https://wordwall.net/" },
-            
-            // REGIONALES E INDISPENSABLES
-            { name: "GeoGebra", cat: "stem", countries: ["🇦🇷", "🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/GeoGebra.png", es_desc: "Software de matemáticas dinámicas para STEM.", pt_desc: "Software de matemática dinâmica para STEM.", es_pros: "Potente, gratuito y estándar técnico.", es_cons: "Curva de aprendizaje inicial.", es_app: "Cálculos de resistencia y física.", url: "https://www.geogebra.org/" },
-            { name: "Canva", cat: "colab", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Canva.png", es_desc: "Diseño gráfico colaborativo profesional.", pt_desc: "Design gráfico colaborativo profissional.", es_pros: "Canva Education gratis para docentes.", es_cons: "Diseños que pueden ser genéricos.", es_app: "Infografías de proyectos de taller.", url: "https://www.canva.com/" },
-            { name: "Genially", cat: "gamific", countries: ["🇲🇽", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Genially.png", es_desc: "Presentaciones interactivas y escape rooms.", pt_desc: "Apresentações interativas e escape rooms.", es_pros: "Interactividad de alto nivel visual.", es_cons: "Carga pesada en conexiones lentas.", es_app: "Manuales de taller interactivos.", url: "https://genial.ly/" },
-            { name: "Padlet", cat: "colab", countries: ["🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Padlet.png", es_desc: "Muro digital colaborativo para recursos.", pt_desc: "Mural digital colaborativo para recursos.", es_pros: "Extremadamente sencillo de usar.", es_cons: "Pocos muros en la versión gratuita.", es_app: "Bitácora digital de evidencias.", url: "https://padlet.com/" },
-            { name: "Nearpod", cat: "eval", countries: ["🇲🇽", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Nearpod.png", es_desc: "Lecciones interactivas con VR y 3D.", pt_desc: "Lições interativas com VR e 3D.", es_pros: "Sincronización total en tiempo real.", es_cons: "Dependencia de conexión estable.", es_app: "Visitas virtuales a plantas industriales.", url: "https://nearpod.com/" },
-            { name: "Classroom", cat: "colab", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "", es_desc: "Gestión centralizada de aprendizaje.", pt_desc: "Gestão centralizada de aprendizagem.", es_pros: "Integración nativa con Google ETRR.", es_cons: "Interfaz poco flexible visualmente.", es_app: "Eje central de gestión académica.", url: "https://classroom.google.com/" },
-            
-            // EVALUACIÓN Y CIERRE
-            { name: "Socrative", cat: "eval", countries: ["🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Socrative.png", es_desc: "Evaluación rápida en tiempo real.", pt_desc: "Avaliação rápida em tempo real.", es_pros: "Informes inmediatos del progreso.", es_cons: "Diseño muy austero.", es_app: "Tickets de salida al finalizar taller.", url: "https://www.socrative.com/" },
-            { name: "Kahoot!", cat: "gamific", countries: ["🇲🇽", "🇧🇷", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Kahoot!.png", es_desc: "Concursos de preguntas gamificados.", pt_desc: "Concursos de perguntas gamificados.", es_pros: "Máxima participación y energía.", es_cons: "Puede ser ruidoso en el aula.", es_app: "Repaso lúdico antes de exámenes.", url: "https://kahoot.com/" },
-            { name: "Google Forms", cat: "eval", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Google%20Forms.png", es_desc: "Exámenes y recolección de datos.", pt_desc: "Exames e coleta de dados.", es_pros: "Autocalificable y ordenado.", es_cons: "Estética limitada.", es_app: "Evaluaciones teóricas de seguridad.", url: "https://forms.google.com" },
-            { name: "Quizizz", cat: "gamific", countries: ["🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Quizizz.png", es_desc: "Cuestionarios al ritmo del alumno.", pt_desc: "Questionários no ritmo do aluno.", es_pros: "Informes de resultados muy profundos.", es_cons: "Interfaz cargada de memes.", es_app: "Tareas de refuerzo fuera de clase.", url: "https://quizizz.com" },
-            { name: "Mentimeter", cat: "colab", countries: ["🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Mentimeter.png", es_desc: "Presentaciones con encuestas en vivo.", pt_desc: "Apresentações com enquetes ao vivo.", es_pros: "Fomenta participación anónima.", es_cons: "Límite de preguntas por sesión.", es_app: "Lluvia de ideas para proyectos.", url: "https://www.mentimeter.com" },
-            { name: "Edpuzzle", cat: "eval", countries: ["🇲🇽", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Edpuzzle.png", es_desc: "Vídeos educativos interactivos.", pt_desc: "Vídeos educativos interativos.", es_pros: "Asegura la atención en videos.", es_cons: "Toma tiempo preparar las pausas.", es_app: "Flipped Classroom técnica.", url: "https://edpuzzle.com" }
+            { name: "MURAL", cat: "colab", countries: ["🇦🇷", "🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/mural.png", es_desc: "Pizarra digital para pensamiento visual y registros de acuerdos.", pt_desc: "Lousa digital para pensamento visual e registros de acordos.", es_pros: "Intuitivo y fácil de manipular.", pt_pros: "Intuitivo e fácil de manipular.", es_cons: "Límite de murales gratuitos.", pt_cons: "Limite de murais gratuitos.", es_app: "Acuerdos de convivencia y proyectos ABP.", pt_app: "Acordos de convivência e projetos ABP.", url: "https://www.mural.co/" },
+            { name: "Quizlet", cat: "gamific", countries: ["🇲🇽", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/quizlet.png", es_desc: "Plataforma de estudio mediante fichas interactivas.", pt_desc: "Plataforma de estudo por meio de cartões interativos.", es_pros: "Ideal para retención de términos técnicos.", pt_pros: "Ideal para retenção de termos técnicos.", es_cons: "Publicidad en versión gratuita.", pt_cons: "Publicidade na versão gratuita.", es_app: "Vocabulario de taller y mantenimiento.", pt_app: "Vocabulário de oficina e manutenção.", url: "https://quizlet.com/" },
+            { name: "NotebookLM", cat: "ia", countries: ["🇲🇽", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/NotebookLM.png", es_desc: "IA de Google para analizar fuentes y sintetizar información.", pt_desc: "IA do Google para analisar fontes e sintetizar informações.", es_pros: "Crea podcasts y resúmenes de tus propios PDF.", pt_pros: "Cria podcasts e resumos dos seus próprios PDFs.", es_cons: "Riesgo de pasividad cognitiva en el alumno.", pt_cons: "Risco de passividade cognitiva no aluno.", es_app: "Análisis de manuales pesados de ingeniería.", pt_app: "Análise de manuais densos de engenharia.", url: "https://notebooklm.google/" },
+            { name: "Napkin AI", cat: "ia", countries: ["🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/NAPKIN.png", es_desc: "IA que transforma texto en esquemas visuales.", pt_desc: "IA que transforma texto em esquemas visuais.", es_pros: "Visualización instantánea de procesos.", pt_pros: "Visualização instantânea de processos.", es_cons: "Mejor funcionamiento en inglés.", pt_cons: "Melhor funcionamento em inglês.", es_app: "Diagramas de flujos técnicos.", pt_app: "Diagramas de fluxos técnicos.", url: "https://www.napkin.ai/" },
+            { name: "Wordwall", cat: "gamific", countries: ["🇧🇷", "🇦🇷", "🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Wordwall.png", es_desc: "Juegos interactivos y material imprimible.", pt_desc: "Jogos interativos e material imprimível.", es_pros: "Plantillas listas para usar.", pt_pros: "Modelos prontos para usar.", es_cons: "Límite de 5 actividades gratuitas.", pt_cons: "Limite de 5 atividades gratuitas.", es_app: "Seguridad Industrial gamificada.", pt_app: "Segurança Industrial gamificada.", url: "https://wordwall.net/" },
+            { name: "GeoGebra", cat: "stem", countries: ["🇦🇷", "🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/GeoGebra.png", es_desc: "Software de matemáticas dinámicas para STEM.", pt_desc: "Software de matemática dinâmica para STEM.", es_pros: "Potente, gratuito y estándar técnico.", pt_pros: "Potente, gratuito e padrão técnico.", es_cons: "Curva de aprendizaje inicial.", pt_cons: "Curva de aprendizado inicial.", es_app: "Cálculos de resistencia y física.", pt_app: "Cálculos de resistência e física.", url: "https://www.geogebra.org/" },
+            { name: "Canva", cat: "colab", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Canva.png", es_desc: "Diseño gráfico colaborativo profesional.", pt_desc: "Design gráfico colaborativo profissional.", es_pros: "Canva Education gratis para docentes.", pt_pros: "Canva Education gratuito para docentes.", es_cons: "Diseños que pueden ser genéricos.", pt_cons: "Designs que podem ser genéricos.", es_app: "Infografías de proyectos de taller.", pt_app: "Infográficos de projetos de oficina.", url: "https://www.canva.com/" },
+            { name: "Genially", cat: "gamific", countries: ["🇲🇽", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Genially.png", es_desc: "Presentaciones interactivas y escape rooms.", pt_desc: "Apresentações interativas e escape rooms.", es_pros: "Interactividad de alto nivel visual.", pt_pros: "Interatividade de alto nível visual.", es_cons: "Carga pesada en conexiones lentas.", pt_cons: "Carga pesada em conexões lentas.", es_app: "Manuales de taller interactivos.", pt_app: "Manuais de oficina interativos.", url: "https://genial.ly/" },
+            { name: "Padlet", cat: "colab", countries: ["🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Padlet.png", es_desc: "Muro digital colaborativo para recursos.", pt_desc: "Mural digital colaborativo para recursos.", es_pros: "Extremadamente sencillo de usar.", pt_pros: "Extremadamente simples de usar.", es_cons: "Pocos muros en la versión gratuita.", pt_cons: "Poucos murais na versão gratuita.", es_app: "Bitácora digital de evidencias.", pt_app: "Portfólio digital de evidências.", url: "https://padlet.com/" },
+            { name: "Nearpod", cat: "eval", countries: ["🇲🇽", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Nearpod.png", es_desc: "Lecciones interactivas con VR y 3D.", pt_desc: "Lições interativas com VR e 3D.", es_pros: "Sincronización total en tiempo real.", pt_pros: "Sincronização total em tempo real.", es_cons: "Dependencia de conexión estable.", pt_cons: "Dependência de conexão estável.", es_app: "Visitas virtuales a plantas industriales.", pt_app: "Visitas virtuais a plantas industriais.", url: "https://nearpod.com/" },
+            { name: "Classroom", cat: "colab", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "", es_desc: "Gestión centralizada de aprendizaje.", pt_desc: "Gestão centralizada de aprendizagem.", es_pros: "Integración nativa con Google ETRR.", pt_pros: "Integração nativa com Google ETRR.", es_cons: "Interfaz poco flexible visualmente.", pt_cons: "Interface pouco flexível visualmente.", es_app: "Eje central de gestión académica.", pt_app: "Eixo central de gestão acadêmica.", url: "https://classroom.google.com/" },
+            { name: "Socrative", cat: "eval", countries: ["🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Socrative.png", es_desc: "Evaluación rápida en tiempo real.", pt_desc: "Avaliação rápida em tempo real.", es_pros: "Informes inmediatos del progreso.", pt_pros: "Relatórios imediatos de progresso.", es_cons: "Diseño muy austero.", pt_cons: "Design muito austero.", es_app: "Tickets de salida al finalizar taller.", pt_app: "Tickets de saída ao finalizar a oficina.", url: "https://www.socrative.com/" },
+            { name: "Kahoot!", cat: "gamific", countries: ["🇲🇽", "🇧🇷", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Kahoot!.png", es_desc: "Concursos de preguntas gamificados.", pt_desc: "Concursos de perguntas gamificados.", es_pros: "Máxima participación y energía.", pt_pros: "Máxima participação e energia.", es_cons: "Puede ser ruidoso en el aula.", pt_cons: "Pode ser barulhento na sala de aula.", es_app: "Repaso lúdico antes de exámenes.", pt_app: "Revisão lúdica antes dos exames.", url: "https://kahoot.com/" },
+            { name: "Google Forms", cat: "eval", countries: ["🇲🇽", "🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Google%20Forms.png", es_desc: "Exámenes y recolección de datos.", pt_desc: "Exames e coleta de dados.", es_pros: "Autocalificable y ordenado.", pt_pros: "Autocorrigível e organizado.", es_cons: "Estética limitada.", pt_cons: "Estética limitada.", es_app: "Evaluaciones teóricas de seguridad.", pt_app: "Avaliações teóricas de segurança.", url: "https://forms.google.com" },
+            { name: "Quizizz", cat: "gamific", countries: ["🇲🇽"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Quizizz.png", es_desc: "Cuestionarios al ritmo del alumno.", pt_desc: "Questionários no ritmo do aluno.", es_pros: "Informes de resultados muy profundos.", pt_pros: "Relatórios de resultados muito detalhados.", es_cons: "Interfaz cargada de memes.", pt_cons: "Interface carregada de memes.", es_app: "Tareas de refuerzo fuera de clase.", pt_app: "Tarefas de reforço fora da aula.", url: "https://quizizz.com" },
+            { name: "Mentimeter", cat: "colab", countries: ["🇦🇷", "🇧🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Mentimeter.png", es_desc: "Presentaciones con encuestas en vivo.", pt_desc: "Apresentações com enquetes ao vivo.", es_pros: "Fomenta participación anónima.", pt_pros: "Incentiva a participação anônima.", es_cons: "Límite de preguntas por sesión.", pt_cons: "Limite de perguntas por sessão.", es_app: "Lluvia de ideas para proyectos.", pt_app: "Brainstorming para projetos.", url: "https://www.mentimeter.com" },
+            { name: "Edpuzzle", cat: "eval", countries: ["🇲🇽", "🇦🇷"], logo: "https://raw.githubusercontent.com/erubielbernabe2017-web/erubielbernabe2017-web.github.io/refs/heads/main/Edpuzzle.png", es_desc: "Vídeos educativos interactivos.", pt_desc: "Vídeos educativos interativos.", es_pros: "Asegura la atención en videos.", pt_pros: "Garante a atenção nos vídeos.", es_cons: "Toma tiempo preparar las pausas.", pt_cons: "Leva tempo para preparar as pausas.", es_app: "Flipped Classroom técnica.", pt_app: "Sala de aula invertida técnica.", url: "https://edpuzzle.com" }
         ];
 
         let currentCat = 'all';
@@ -127,7 +140,7 @@
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
             
             const filtered = tools.filter(t => {
-                const searchStr = (t.name + t.es_desc + t.countries.join('')).toLowerCase();
+                const searchStr = (t.name + t.es_desc + t.pt_desc + t.countries.join('')).toLowerCase();
                 const matchesSearch = searchStr.includes(searchInput);
                 const matchesCat = currentCat === 'all' || t.cat === currentCat;
                 return matchesSearch && matchesCat;
@@ -155,23 +168,29 @@
 
                     <div class="grid grid-cols-1 gap-3 mb-8">
                         <div class="bg-green-50 p-3 rounded-xl border-l-4 border-green-500">
-                            <span class="text-[9px] font-black text-green-700 uppercase block mb-1">Puntos a Favor</span>
-                            <p class="text-[11px] text-slate-700 font-bold leading-tight">${t.es_pros}</p>
+                            <span class="text-[9px] font-black text-green-700 uppercase block mb-1 es">Puntos a Favor</span>
+                            <span class="text-[9px] font-black text-green-700 uppercase block mb-1 pt">Pontos Fortes</span>
+                            <p class="text-[11px] text-slate-700 font-bold leading-tight es">${t.es_pros}</p>
+                            <p class="text-[11px] text-slate-700 font-bold leading-tight pt">${t.pt_pros || t.es_pros}</p>
                         </div>
                         <div class="bg-red-50 p-3 rounded-xl border-l-4 border-red-500">
-                            <span class="text-[9px] font-black text-red-700 uppercase block mb-1">Limitaciones</span>
-                            <p class="text-[11px] text-slate-700 font-bold leading-tight">${t.es_cons}</p>
+                            <span class="text-[9px] font-black text-red-700 uppercase block mb-1 es">Limitaciones</span>
+                            <span class="text-[9px] font-black text-red-700 uppercase block mb-1 pt">Limitações</span>
+                            <p class="text-[11px] text-slate-700 font-bold leading-tight es">${t.es_cons}</p>
+                            <p class="text-[11px] text-slate-700 font-bold leading-tight pt">${t.pt_cons || t.es_cons}</p>
                         </div>
                     </div>
 
                     <div class="mt-auto border-t border-slate-100 pt-6">
                         <div class="mb-5">
-                            <span class="text-[9px] font-black text-red-600 uppercase tracking-widest block mb-1">Aplicación Técnica ETRR</span>
+                            <span class="text-[9px] font-black text-red-600 uppercase tracking-widest block mb-1 es">Aplicación Técnica ETRR</span>
+                            <span class="text-[9px] font-black text-red-600 uppercase tracking-widest block mb-1 pt">Aplicação Técnica ETRR</span>
                             <p class="text-xs font-bold text-navy es">${t.es_app}</p>
                             <p class="text-xs font-bold text-navy pt">${t.pt_app}</p>
                         </div>
                         <a href="${t.url}" target="_blank" class="w-full py-4 bg-navy text-white rounded-2xl font-black text-xs flex items-center justify-center gap-3 hover:bg-red transition-all shadow-lg shadow-navy/20 group">
-                            <span class="es tracking-widest">ABRIR RECURSO</span><span class="pt tracking-widest">ABRIR RECURSO</span>
+                            <span class="es tracking-widest">ABRIR RECURSO</span>
+                            <span class="pt tracking-widest">ABRIR RECURSO</span>
                             <i data-lucide="external-link" size="14" class="group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
